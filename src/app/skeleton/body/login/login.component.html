@@ -1,0 +1,21 @@
+<mat-card>
+  <div *ngIf="errorData">
+    <p color="red">{{ errorData.message }}</p>
+  </div>
+  <mat-card-title> Login </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+      <mat-form-field>
+        <input type="text" matInput placeholder="Username" formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="password" />
+      </mat-form-field>
+    </form>
+    <p>Aún sin cuenta? Crea una <strong class="lnk" routerLink="/register">aquí!</strong></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button type="submit" mat-raised-button color="primary">Login</button>
+  </mat-card-actions>
+</mat-card>
+<img src="../../../../assets/logo Inverted.png" id="back">

@@ -1,0 +1,36 @@
+<mat-drawer-container id="main-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-list id="list">
+      <span class="spacer"></span>
+      <mat-list-item id="active">Acerca de nosotros</mat-list-item>
+      <span class="spacer"></span>
+      <mat-divider></mat-divider>
+      <span class="spacer"></span>
+      <mat-list-item routerLink="/calendar">Calendario</mat-list-item>
+      <span class="spacer"></span>
+      <mat-divider></mat-divider>
+      <span class="spacer"></span>
+      <mat-list-item>Precios</mat-list-item>
+      <span class="spacer"></span>
+      <mat-divider></mat-divider>
+      <span class="spacer"></span>
+    </mat-list>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="../../../../assets/logo.png" id="logo">
+      <span id="title" routerLink="">Escuela de manejo Lopez</span>
+      <span class="spacer"></span>
+      <button mat-icon-button routerLink="login" aria-label="Log in!">
+        <mat-icon >login</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon *ngIf="verifier" id="logout-icon">login</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
